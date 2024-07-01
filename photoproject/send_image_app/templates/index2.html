@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}画像のアップロード{% endblock %}
+    {% block contents %}
+
+        <div class="container" style="margin-top: 50px; text-align: center;">
+        <form method="POST" class="form" enctype="multipart/form-data" id="image_form" mx-auto d-block>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success" style="margin-top: 20px;">送る</button>  
+        </form> 
+
+
+
+    {% endblock %} 

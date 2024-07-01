@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}推論結果{% endblock %}
+
+    {% block contents %}
+
+
+<div class="container d-flex justify-content-center align-items-center" style="height: 50vh;">
+    <img src="{{ img_url }}" alt="" class="img-fluid" style="max-width: 500px; height: auto;">
+</div>
+
+
+    
+    <div class="col offset-1 py-1 text-center" style="margin-top: 50px; font-size: smaller;">
+        <h1 class="mt-5 mb-4" style="font-size: 3rem; text-center">推論結果: {{ prediction }}</h1>
+        <h1 class="mt-5 mb-4" style="font-size: 3rem; text-center">推論値: {{ accuracy}}  </h1>
+        <a href="{% url 'send_image_app:image_upload' %}" class="btn btn-primary">別の画像判定する</a>
+
+    </div>
+    {% endblock %}
+

@@ -1,0 +1,23 @@
+{% load static %}
+
+<section class="py-5 text-center container">
+    {% comment %} <header class="masthead" style="background-image:   url({% static 'img/top.jpg' %})"> {% endcomment %} 
+    
+    <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">馬の健康管理アプリ</h1>
+        <p class="lead text-body-secondary">AIで新しい馬ライフ</p>
+        <p>
+            {% if user.is_authenticated %}
+            <li><a href='#' class="btn btn-primary my-2">投稿する</a></li>
+            <li><a href="{% url 'accounts:logout' %}" class="btn btn-secondary my-2">ログアウト</a></li>
+
+            {% else %}
+            <a href="{% url 'accounts:signup' %}" class="btn btn-primary my-2">今すぐサインアップ</a>
+            <a href="{% url 'accounts:login' %}" class="btn btn-secondary my-2">登録済みの方はログイン</a>
+            {% endif %}
+        </p>
+    </div>
+    </div>
+    
+</section>
